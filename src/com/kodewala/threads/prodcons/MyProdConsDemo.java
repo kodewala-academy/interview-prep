@@ -44,7 +44,7 @@ class Producer extends Thread
 	{
 		try
 		{
-			for (int i = 0; i < 5; i++)
+			for (int i = 0; i < 15; i++)
 			{
 				prodCons.produce();
 			}
@@ -71,7 +71,7 @@ class Consumer extends Thread
 	{
 		try
 		{
-			for (int i = 0; i < 5; i++)
+			for (int i = 0; i < 15; i++)
 			{
 				prodCons.consume();
 			}
