@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Aadhar Registration</title>
+</head>
+<body>
+	<h2>Aadhar Registration</h2>
+	<form th:action="@{/submitAadhar}" th:object="${aadharInfo}"
+		method="post">
+		<div>
+			<label for="firstName">First Name:</label> <input type="text"
+				th:field="*{firstName}" id="firstName" required />
+		</div>
+		<div>
+			<label for="lastName">Last Name:</label> <input type="text"
+				th:field="*{lastName}" id="lastName"  />
+		</div>
+		<div>
+			<label for="mobile">Mobile:</label> <input type="text"
+				th:field="*{mobile}" id="mobile" required />
+		</div>
+		<div>
+			<button type="submit">Submit</button>
+		</div>
+	</form>
+</body>
+</html>
