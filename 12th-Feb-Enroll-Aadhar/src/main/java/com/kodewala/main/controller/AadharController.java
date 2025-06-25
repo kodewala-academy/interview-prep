@@ -21,8 +21,14 @@ public class AadharController
 	@GetMapping("/")
 	public String showRegistrationPage(Model model)
 	{
+		long startTime = System.currentTimeMillis();
+		
 		AadharInfo aadharInfo = new AadharInfo();
 		model.addAttribute("aadharInfo", aadharInfo);
+		
+		long endTime = System.currentTimeMillis();
+		
+		long totalTime = endTime - startTime;
 		return "registration";
 	}
 

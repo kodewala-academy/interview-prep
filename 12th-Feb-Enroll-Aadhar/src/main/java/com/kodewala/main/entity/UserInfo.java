@@ -6,6 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.persistence.Transient;
 
 @Entity
 @Table(name = "aadhar_reg_info")
@@ -17,8 +18,13 @@ public class UserInfo
 
 	@Column
 	private String firstName;
+
+	
+	@Transient
 	@Column
 	private String lastName;
+	
+	
 	@Column
 	private String mobile;
 	@Column
