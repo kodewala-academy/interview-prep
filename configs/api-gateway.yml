@@ -11,9 +11,9 @@ spring:
         - id: aadhaar-service
           uri: lb://aadhaar-service
           predicates:
-            - Path=/aadhaar/**
+            - Path=/api/aadhaar/**
           filters:
-            - StripPrefix=1
+            - StripPrefix=2
 
 eureka:
   client:
