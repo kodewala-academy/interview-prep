@@ -1,19 +1,29 @@
 spring:
+  application:
+    name: order-service
+
   datasource:
-    url: jdbc:mysql://localhost:3306/productdb_dev
+    url: jdbc:mysql://localhost:3306/orderdb_dev
     username: root
     password: Test@12345
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: update   # create / update schema automatically
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
 server:
-  port: 8081
+  port: 8082
 
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+    fetch-registry: true
+
+feign:
+  hystrix:
+    enabled: true  # if you want circuit breaker support (optional)
