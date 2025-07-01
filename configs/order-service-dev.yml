@@ -37,3 +37,7 @@ eureka:
 feign:
   hystrix:
     enabled: true
+    
+logging:
+  pattern:
+    level: "%5p [${spring.application.name},%X{traceId},%X{spanId}]"
