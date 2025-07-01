@@ -15,14 +15,10 @@ spring:
     database-platform: org.hibernate.dialect.MySQL8Dialect
 
   zipkin:
-    base-url: http://zipkin:9411
+    base-url: http://localhost:9411
     enabled: true
     sender:
       type: web
-
-  sleuth:
-    sampler:
-      probability: 1.0
 
 server:
   port: 8082
@@ -37,7 +33,12 @@ eureka:
 feign:
   hystrix:
     enabled: true
-    
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
+
 logging:
   pattern:
     level: "%5p [${spring.application.name},%X{traceId},%X{spanId}]"
