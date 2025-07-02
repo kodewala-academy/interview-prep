@@ -17,6 +17,9 @@ spring:
   zipkin:
     base-url: http://localhost:9411
     enabled: true
+  sleuth:
+    sampler:
+      probability: 1.0
 
 server:
   port: 8082
@@ -36,7 +39,11 @@ management:
   tracing:
     sampling:
       probability: 1.0
-
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %5p [${spring.application.name},%X{traceId},%X{spanId}] %logger{36} - %msg%n"
