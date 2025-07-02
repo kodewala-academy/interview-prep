@@ -20,7 +20,13 @@ spring:
   sleuth:
     sampler:
       probability: 1.0
-
+    propagation-keys:
+      - b3
+      - X-B3-TraceId
+      - X-B3-SpanId
+      - X-B3-ParentSpanId
+      - X-B3-Sampled
+      - X-B3-Flags
 server:
   port: 8082
 
