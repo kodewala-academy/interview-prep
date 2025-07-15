@@ -53,3 +53,20 @@ management:
 logging:
   pattern:
     console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %5p [${spring.application.name},%X{traceId},%X{spanId}] %logger{36} - %msg%n"
+
+		
+resilience4j:
+  circuitbreaker:
+    instances:
+      orderService:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        permittedNumberOfCallsInHalfOpenState: 3
+        waitDurationInOpenState: 5s
+        failureRateThreshold: 50
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+retry:
+instances:
+  orderService:
+    maxRetryAttempts: 3
+    waitDuration: 2s
