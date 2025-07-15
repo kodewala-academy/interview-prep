@@ -65,8 +65,8 @@ resilience4j:
         waitDurationInOpenState: 5s
         failureRateThreshold: 50
         automaticTransitionFromOpenToHalfOpenEnabled: true
-retry:
-  instances:
-    orderService:
-      maxRetryAttempts: 3
-      waitDuration: 2s
+  retry:
+    instances:
+      orderService:
+        maxRetryAttempts: 3
+        waitDuration: 2s
