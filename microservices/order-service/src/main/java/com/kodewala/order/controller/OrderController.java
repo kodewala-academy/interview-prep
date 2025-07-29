@@ -33,7 +33,7 @@ public class OrderController {
 		log.info("Placing order: {}", orderRequest);
 
 		Order order = orderService.placeOrder(orderRequest.getProductId(), orderRequest.getQuantity(),
-				orderRequest.getOrderStatus());
+				orderRequest.getOrderStatus(), orderRequest.getEmail());
 		return ResponseEntity.ok(order);
 	}
 

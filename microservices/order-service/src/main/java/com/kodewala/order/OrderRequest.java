@@ -4,6 +4,14 @@ public class OrderRequest {
 	private Long productId;
 	private int quantity;
 	private String orderStatus;
+	 private String email;
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
 	// getters and setters
 	public Long getProductId() {

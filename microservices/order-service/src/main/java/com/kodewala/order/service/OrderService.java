@@ -24,7 +24,7 @@ public class OrderService {
 		this.kafkaProducerService = kafkaProducerService;
 	}
 
-	public Order placeOrder(Long productId, int quantity, String orderStatus) {
+	public Order placeOrder(Long productId, int quantity, String orderStatus, String email) {
 		// 1. Get product details from product service
 		Product product = productClient.getProductById(productId);
 
@@ -37,7 +37,7 @@ public class OrderService {
 
 		// 3. Save order to DB
 		order = orderRepository.save(order);
-		
+		order.setEmail(email);
 		try {
 			String orderJson = new ObjectMapper().writeValueAsString(order);
 			kafkaProducerService.sendMessage(orderJson); // uses KafkaTemplate internally
