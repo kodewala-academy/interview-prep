@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean class="com.kodewala.beans.Address" id="add">
+		<property name="line1" value="12th main" />
+		<property name="line2" value="27th corss" />
+		<property name="city" value="Bangalore" />
+		
+	</bean>	
+
+	<bean class="com.kodewala.beans.Employee" id="emp">
+
+		<property name="name" value="Kodewala" />
+		<property name="empId" value="KW1234" />
+		<property name="email" value="info@kodewala" />
+		<property name="address" ref="add" />
+	</bean>
+
+
+</beans>
