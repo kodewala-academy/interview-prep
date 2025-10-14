@@ -1,1 +1,3 @@
-this is test config for order service 
+service-name=order
+service-port=9909
+dr.url=locahost:8080/db
