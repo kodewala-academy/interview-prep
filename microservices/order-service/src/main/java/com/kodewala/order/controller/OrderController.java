@@ -27,7 +27,7 @@ public class OrderController {
 	}
 
 	// Accept JSON request body instead of request parameters
-	@PostMapping
+	@PostMapping("placeOrder")
 	public ResponseEntity<Order> placeOrder(@RequestBody OrderRequest orderRequest) {
 
 		log.info("Placing order: {}", orderRequest);

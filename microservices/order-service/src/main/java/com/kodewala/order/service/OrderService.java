@@ -38,6 +38,7 @@ public class OrderService {
 		// 3. Save order to DB
 		order = orderRepository.save(order);
 		order.setEmail(email);
+		// Sending message to Kafka
 		try {
 			String orderJson = new ObjectMapper().writeValueAsString(order);
 			kafkaProducerService.sendMessage(orderJson); // uses KafkaTemplate internally
