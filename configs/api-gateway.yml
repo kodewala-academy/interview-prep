@@ -14,7 +14,12 @@ spring:
             - Path=/api/aadhaar/**
           filters:
             - StripPrefix=2
-
+        - id: order-service
+          uri: lb://order-service
+          predicates:
+            - Path=/api/orders/**
+          filters:
+            - StripPrefix=2
 eureka:
   client:
     service-url:
