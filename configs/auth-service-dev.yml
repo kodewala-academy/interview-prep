@@ -1,7 +1,4 @@
 spring:
-  application:
-    name: auth-service
-
   datasource:
     url: jdbc:mysql://localhost:3306/authdb_dev
     username: root
@@ -13,13 +10,3 @@ spring:
       ddl-auto: update
     show-sql: true
     database-platform: org.hibernate.dialect.MySQL8Dialect
-
-server:
-  port: 8083
-
-eureka:
-  client:
-    service-url:
-      defaultZone: http://localhost:8761/eureka
-    register-with-eureka: true
-    fetch-registry: true
