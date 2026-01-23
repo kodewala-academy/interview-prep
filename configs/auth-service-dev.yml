@@ -2,12 +2,6 @@ spring:
   application:
     name: auth-service
 
-  config:
-    import: optional:configserver:
-  cloud:
-    config:
-      uri: http://localhost:8888
-
   datasource:
     url: jdbc:mysql://localhost:3306/authdb_dev
     username: root
