@@ -34,11 +34,13 @@ public class ProductController {
 	@GetMapping("/{id}")
 	public Product getProduct(@PathVariable Long id) {
 		log.info("Get product : {}", id);
+
 		return productRepository.findById(id).orElseThrow();
 	}
 
 	@GetMapping
 	public List<Product> getAllProducts() {
+		log.info(" found alll the products....");
 		return productRepository.findAll();
 	}
 }
