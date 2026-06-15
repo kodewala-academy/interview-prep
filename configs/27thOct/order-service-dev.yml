@@ -5,7 +5,7 @@ spring:
   datasource:
     url: jdbc:mysql://localhost:3306/orderdb_dev   # changed from mysql → localhost
     username: root
-    password: Test@12345554321
+    password: Test@12345
     driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
