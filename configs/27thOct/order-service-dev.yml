@@ -49,3 +49,6 @@ resilience4j:
         failureRateThreshold: 50
         waitDurationInOpenState: 30s
         permittedNumberOfCallsInHalfOpenState: 2
+logging:
+  level:
+    io.github.resilience4j.circuitbreaker: DEBUG
