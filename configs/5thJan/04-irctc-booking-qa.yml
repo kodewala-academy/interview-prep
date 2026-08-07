@@ -57,6 +57,14 @@ resilience4j:
   circuitbreaker:
     instances:
       paymentService:
+        registerHealthIndicator: true
         slidingWindowSize: 5
+        minimumNumberOfCalls: 5
         failureRateThreshold: 50
         waitDurationInOpenState: 20s
+        permittedNumberOfCallsInHalfOpenState: 2
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+
+logging:
+  level:
+    io.github.resilience4j: DEBUG
