@@ -11,25 +11,12 @@ spring:
         locator:
           enabled: true
           lower-case-service-id: true
-      routes:
-        - id: aadhaar-service
-          uri: lb://aadhaar-service
+       routes:
+
+        - id: irctc-booking-service
+          uri: lb://04-IRCTC-BOOKING
           predicates:
-            - Path=/api/aadhaar/**
-          filters:
-            - StripPrefix=2
-        - id: order-service
-          uri: lb://order-service
-          predicates:
-            - Path=/api/orders/**
-          filters:
-            - StripPrefix=1
-            - name: RequestRateLimiter
-              args:
-                redis-rate-limiter.replenishRate: 5
-                redis-rate-limiter.burstCapacity: 5
-                redis-rate-limiter.requestedTokens: 1
-                key-resolver: "#{@ipKeyResolver}"
+            - Path=/irctc/booking/**
 eureka:
   client:
     service-url:
