@@ -4,16 +4,13 @@ server:
 spring:
   cloud:
     gateway:
-      discovery:
-        locator:
-          enabled: true
-          lower-case-service-id: true
-
-      routes:
-        - id: irctc-booking-service
-          uri: lb://04-IRCTC-BOOKING
-          predicates:
-            - Path=/irctc/booking/**
+      server:
+        webflux:
+          routes:
+            - id: irctc-booking-service
+              uri: lb://04-IRCTC-BOOKING
+              predicates:
+                - Path=/irctc/booking/**
 
 eureka:
   client:
